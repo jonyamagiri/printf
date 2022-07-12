@@ -2,9 +2,11 @@
 
 ### Description: 
 > This repository contains the tasks for `C - printf` group project whereby we implemented our own `printf` function.
-`printf` is the C language function to do format-ted printing.
+The C library function `int printf(const char *format, ...)` sends formatted output to stdout.
+The declaration for printf() function is `int printf(const char *format, ...)`
 
 
+___
 
 #### Requirements:
 * All files compiled on Ubuntu 20.04 LTS using `gcc`, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
@@ -22,6 +24,8 @@
 	* `va_end (man 3 va_end)`
 	* `va_copy (man 3 va_copy)`
 	* `va_arg (man 3 va_arg)`
+
+___
 
 #### Tasks:
 0. Handle the following conversion specifiers: *`c` *`s` *`%`
