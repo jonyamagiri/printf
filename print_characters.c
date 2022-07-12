@@ -21,7 +21,7 @@ int print_c(va_list inputs)
 
 int print_s(va_list inputs)
 {
-	int i = 0;
+	int i = 0, count = 0;
 	char *str;
 
 	str = va_arg(inputs, char *);
@@ -30,22 +30,10 @@ int print_s(va_list inputs)
 		str = "(null)";
 	}
 
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		_putchar(str[i]);
+		count += _putchar(str[i]);
 		i++;
 	}
-	return (i);
-}
-
-/**
-* print_percent- prints % character to standard output
-* @inputs: the list of characters to be printed
-* Return: the specified character
-*/
-
-int print_percent(__attribute__((unused))va_list inputs)
-{
-	_putchar('%');
-	return (1);
+	return (count);
 }
