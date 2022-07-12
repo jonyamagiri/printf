@@ -15,20 +15,18 @@
 * No more than 5 functions per file
 * All header files should be guarded
 * Authorized functions and macros
-	-`write (man 2 write)`
-	-`malloc (man 3 malloc)`
-	-`free (man 3 free)`
-	-`va_start (man 3 va_start)`
-	-`va_end (man 3 va_end)`
-	-`va_copy (man 3 va_copy)`
-	-`va_arg (man 3 va_arg)`
+	* `write (man 2 write)`
+	* `malloc (man 3 malloc)`
+	* `free (man 3 free)`
+	* `va_start (man 3 va_start)`
+	* `va_end (man 3 va_end)`
+	* `va_copy (man 3 va_copy)`
+	* `va_arg (man 3 va_arg)`
 
 #### Tasks:
-0. Write a function that produces output according to a format.
-* Prototype: `int _printf(const char *format, ...);`
-* You need to handle the following conversion specifiers: `c` `s` `%`
+0. Handle the following conversion specifiers: *`c` *`s` *`%`
 
-1. Handle the following conversion specifiers: `d` `i`
+1. Handle the following conversion specifiers: *`d` *`i`
 
 
 
@@ -38,6 +36,6 @@ ___
 ### Authors:
 
 > This group project is a collaboration between:
- [Joab O. Nyamagiri](https://github.com/jonyamagiri) 
- [John Obiero](https://github.com/JohnObiero)
+* [Joab O. Nyamagiri](https://github.com/jonyamagiri) 
+* [John Obiero](https://github.com/JohnObiero)
 
