@@ -6,41 +6,42 @@
 */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, num = 0;
-	va_list inputs;
-	int (*func)(va_list);
+	int num = 0;
 
-	if (format == NULL)
-		return (-1);
-
-	va_start(inputs, format);
-	for (i = 0; format[i]; i++)
+	if (format != NULL)
 	{
-		while (format[i] != '%' && format[i])
-		{
-			_putchar(format[i]);
-			num++;
-			i++;
-		}
-		if (!format[i])
-		{
-			return (num);
-		}
-		func = check_func(format[i + 1]);
-		if (func != NULL)
-		{
-			num += func(inputs);
-			i += 2;
-			continue;
-		}
-		if (!format[i + 1])
+		int i;
+		va_list inputs;
+		int (*f)(va_list);
+
+		va_start(inputs, format);
+		if (format[0] == '%' && format[1] == '\0')
 			return (-1);
 
-		_putchar(format[i]);
-		num++;
-		if (format[i + 1] == '%')
-			i += 2;
+		num = 0;
+
+		while (format[i] != '\0')
+		{
+			if (format[i] == '%')
+			{
+				if (format[i + 1] == '%')
+				{
+					num += _putchar(format[i]);
+					i++;
+				}
+				else if (format[i + 1] != '\0')
+				{
+					f = check_func(format[i + 1]);
+					num += (f ? f(inputs) :  _putchar(format[i]) + _putchar(format[i + 1]));
+					i++;
+				}
+			}
+			else
+				num += _putchar(format[i]);
+			i++;
+		}
+		va_end(inputs);
 	}
-	va_end(inputs);
-	return (num);
+
+		return (num);
 }
